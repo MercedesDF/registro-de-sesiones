@@ -155,7 +155,7 @@ npm run deploy
 
 ## Enlaces del Proyecto y Contacto
 
--   **En acción**: [MercedesDF/egistro-de-sesiones](https://mercedesdf.github.io/registro-de-sesiones)
+-   **En acción**: [MercedesDF/registro-de-sesiones](https://mercedesdf.github.io/registro-de-sesiones)
 -   **LinkedIn (Principal)**: [mercedesdf](https://www.linkedin.com/in/mercedesdf)
 -   **LinkedIn (Ingeniería)**: [mercedesdf-ingenieria](https://www.linkedin.com/in/mercedesdf-ingenieria)
 -   **Contacto**: `mercedev@mercedev.es`
