@@ -110,7 +110,7 @@ Puedes desplegar esta aplicación gratuitamente usando GitHub Pages. Asumiendo q
 
 ## Enlaces del Proyecto y Contacto
 
--   **Repositorio GitHub**: [MercedesDF/02-registro-de-sesiones (v1.0.1)](https://github.com/MercedesDF/02-registro-de-sesiones-v1.0.0)
+-   **En acción**: [MercedesDF/egistro-de-sesiones](https://mercedesdf.github.io/registro-de-sesiones)
 -   **LinkedIn (Principal)**: [mercedesdf](https://www.linkedin.com/in/mercedesdf)
 -   **LinkedIn (Ingeniería)**: [mercedesdf-ingenieria](https://www.linkedin.com/in/mercedesdf-ingenieria)
 -   **Contacto**: `mercedev@mercedev.es`
