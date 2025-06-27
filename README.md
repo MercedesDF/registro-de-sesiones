@@ -52,61 +52,106 @@ Puedes usar cualquier servidor HTTP simple. Aquí algunos ejemplos:
 
 ## Despliegue en GitHub Pages
 
-Puedes desplegar esta aplicación gratuitamente usando GitHub Pages. Asumiendo que ya tienes tu proyecto como un repositorio Git y los cambios confirmados, y estás usando una terminal Linux/Ubuntu/WSL2:
+Guía para desplegar proyecto Vite con gh-pages en GitHub Pages
 
-1.  **Crea un Repositorio en GitHub**:
-    Si aún no lo has hecho, ve a [GitHub](https://github.com/new) y crea un nuevo repositorio. No inicialices con un README, .gitignore o licencia si ya los tienes localmente.
+1. Asegúrate de tener Git y un repositorio en GitHub
 
-2.  **Conecta tu Repositorio Local con GitHub (si no lo has hecho)**:
-    Reemplaza `TU_USUARIO` y `TU_REPOSITORIO` con tu nombre de usuario y el nombre del repositorio de GitHub.
-    ```bash
-    # Asegúrate de estar en la raíz de tu proyecto en la terminal
-    # Si es un proyecto nuevo y no es un repositorio git:
-    # git init -b main
-    # git add .
-    # git commit -m "Initial commit of project files"
+Tu proyecto debe estar conectado a un repositorio en GitHub.
 
-    # Si ya tienes un remote llamado 'origin', puedes omitir este paso o actualizar la URL.
-    # Para añadir el remote:
-    git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-    
-    # Verifica que el remote se haya añadido correctamente
-    git remote -v
-    ```
+La rama principal suele ser main o master.
 
-3.  **Sube tu Código a GitHub**:
-    Asegúrate de que todos tus archivos (`index.html`, `index.tsx`, `App.tsx`, `components/`, `utils/`, `types.ts`, `metadata.json`, `favicon.ico`, `README.md`) están confirmados en tu rama principal (generalmente `main`).
-    ```bash
-    # Verifica tu rama actual (ej. 'main')
-    git branch
+Si no lo has hecho:
 
-    # Si necesitas confirmar cambios:
-    # git add .
-    # git commit -m "Prepare for GitHub Pages deployment"
+git init
+git remote add origin https://github.com/tu-usuario/tu-repo.git
+git add .
+git commit -m "Proyecto inicial"
+git push -u origin main
 
-    # Sube tus cambios a la rama principal de GitHub
-    git push -u origin main  # O el nombre de tu rama principal si es diferente
-    ```
+2. Instala la dependencia gh-pages
 
-4.  **Configura GitHub Pages en tu Repositorio**:
-    *   Ve a tu repositorio en GitHub (`https://github.com/TU_USUARIO/TU_REPOSITORIO`).
-    *   Haz clic en la pestaña "Settings" (Configuración).
-    *   En el menú lateral izquierdo, busca la sección "Pages" (Páginas) bajo "Code and automation".
-    *   En la sección "Build and deployment":
-        *   Bajo "Source", selecciona "Deploy from a branch".
-        *   Bajo "Branch", asegúrate de que esté seleccionada tu rama principal (ej. `main`) y la carpeta `/ (root)`.
-        *   Haz clic en "Save".
+npm install --save-dev gh-pages
+
+3. Configura el base en vite.config.js
+
+Abre o crea el archivo vite.config.js en la raíz de tu proyecto y asegúrate que incluye la configuración correcta del base (la ruta de tu repo):
+
+```javascript
+// vite.config.js
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/tu-repo/',  // Cambia 'tu-repo' por el nombre real de tu repo GitHub
+})
+Esto es fundamental para que los enlaces y recursos se carguen bien.
+
+4. Añade scripts en package.json
+
+Edita tu package.json y bajo "scripts" agrega estos comandos:
+
+"scripts": {
+  "build": "vite build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+
+build: construye el proyecto listo para producción.
+
+predeploy: se ejecuta antes del deploy para crear la carpeta dist.
+
+deploy: sube la carpeta dist a la rama gh-pages usando la librería gh-pages.
+
+5. Ejecuta el despliegue
+
+Cada vez que quieras publicar o actualizar la web:
+
+npm run deploy
+
+Este comando hará:
+
+Construir el proyecto con vite build.
+
+Subir el contenido generado (dist) a la rama gh-pages.
+
+6. Configura GitHub Pages en GitHub
+
+Entra a tu repositorio en GitHub.
+
+Ve a Settings > Pages.
+
+En Source, selecciona:
+
+Rama: gh-pages
+
+Carpeta: / (root)
+
+Guarda.
+
+7. Visita tu página web
+
+Pasados unos minutos, tu web estará accesible en:
+
+https://tu-usuario.github.io/tu-repo/
+
+8. Flujo típico para actualizar el proyecto
+
+Modifica código en tu rama principal (main).
+
+Haz commit y push:
+
+git add .
+git commit -m "Cambios en el proyecto"
+git push origin main
+
+Ejecuta despliegue para actualizar la web:
+
+npm run deploy
 
 5.  **Accede a tu Aplicación**:
     GitHub Pages tomará unos minutos para construir y desplegar tu sitio. Una vez listo, podrás acceder a él desde una URL similar a:
     `https://TU_USUARIO.github.io/TU_REPOSITORIO/`
 
     La URL exacta se mostrará en la sección "Pages" de la configuración de tu repositorio una vez que el despliegue esté completo y aparezca un mensaje indicando que tu sitio está publicado.
-
-**Importante**:
-*   Gracias a la configuración con Babel Standalone, no necesitas un paso de compilación previo. GitHub Pages servirá los archivos tal cual, y la transpilación ocurrirá en el navegador del visitante.
-*   Asegúrate de que tu archivo `index.html` utiliza rutas relativas para los assets (ej. `./index.tsx`, `./favicon.ico`) para que funcione correctamente cuando se sirva desde la subruta del repositorio en GitHub Pages. Esto ya está configurado en el proyecto.
-*   Si tu repositorio es privado, necesitarás una cuenta de GitHub Pro, Team o Enterprise Cloud para desplegar con GitHub Pages. Para repositorios públicos, es gratuito.
 
 ## Enlaces del Proyecto y Contacto
 

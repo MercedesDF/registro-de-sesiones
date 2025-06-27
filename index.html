@@ -5,52 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro de Sesiones v1.0.1</title>
   <link rel="icon" href="./favicon.ico" />
+  
+  <!-- TailwindCSS CDN (solo para desarrollo rápido, en producción usa build CSS) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Cargar Babel Standalone para transpilar TSX en el navegador -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
   <style>
-    /* Estilos personalizados para la barra de desplazamiento con el nuevo tema verde */
+    /* Estilos personalizados para la barra de desplazamiento con tema verde */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #F9FAFB; /* Corresponde al APP_BG_COLOR */
+      background: #F9FAFB;
     }
     ::-webkit-scrollbar-thumb {
-      background: #4ADE80; /* green-400 */
+      background: #4ADE80;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #22C55E; /* green-500 */
+      background: #22C55E;
     }
-    html {
+    html, body {
       height: 100%;
-    }
-    body {
-      min-height: 100%;
-      background-color: #F9FAFB; /* APP_BG_COLOR */
-      color: #1F2937; /* PRIMARY_TEXT_COLOR */
       margin: 0;
+      background-color: #F9FAFB;
+      color: #1F2937;
     }
-    
   </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
-  }
-}
-</script>
-<link href="./dist/output.css" rel="stylesheet">
 
+  <link href="/dist/output.css" rel="stylesheet" />
+  
 </head>
 <body class="antialiased">
   <div id="root"></div>
-  <!-- Usar type="text/babel" para que Babel lo transpile. data-type="module" preserva el contexto de módulo ES6. -->
-  <script type="text/babel" data-type="module" src="./index.tsx"></script>
-<script type="module" src="/index.tsx"></script>
+
+  <!-- Aquí sólo carga el script principal con type="module" -->
+  <script type="module" src="./index.tsx"></script>
 </body>
 </html>
