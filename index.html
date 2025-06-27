@@ -3,37 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registro de Sesiones v1.0.0</title>
-  <link rel="icon" href="/assets/favicon-BcHudKm-.ico" />
+  <title>Registro de Sesiones v1.0.1</title>
+  <link rel="icon" href="/registro-de-sesiones/assets/favicon-BcHudKm-.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Cargar Babel Standalone para transpilar TSX en el navegador -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
-    /* Estilos personalizados para la barra de desplazamiento con el nuevo tema azul */
+    /* Estilos personalizados para la barra de desplazamiento con el nuevo tema verde */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #F9FAFB; /* Corresponde al nuevo APP_BG_COLOR */
+      background: #F9FAFB; /* Corresponde al APP_BG_COLOR */
     }
     ::-webkit-scrollbar-thumb {
-      background: #60A5FA; /* Corresponde al nuevo ACCENT_HOVER_COLOR */
+      background: #4ADE80; /* green-400 */
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #3B82F6; /* Corresponde al nuevo ACCENT_COLOR */
+      background: #22C55E; /* green-500 */
     }
     html {
       height: 100%;
     }
     body {
       min-height: 100%;
-      background-color: #F9FAFB; /* Nuevo APP_BG_COLOR */
-      color: #1F2937; /* Nuevo PRIMARY_TEXT_COLOR */
+      background-color: #F9FAFB; /* APP_BG_COLOR */
+      color: #1F2937; /* PRIMARY_TEXT_COLOR */
       margin: 0;
     }
     
   </style>
-  <link rel="stylesheet" href="/assets/index-Cx6imfoF.css" />
+
+<link href="./dist/output.css" rel="stylesheet">
+
 <script type="importmap">
 {
   "imports": {
@@ -43,9 +47,11 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-Cx6imfoF.js"></script>
+  <script type="module" crossorigin src="/registro-de-sesiones/assets/index-CtkZk1t2.js"></script>
 </head>
 <body class="antialiased">
   <div id="root"></div>
+  <!-- Usar type="text/babel" para que Babel lo transpile. data-type="module" preserva el contexto de módulo ES6. -->
+  <script type="text/babel" data-type="module" src="./index.tsx"></script>
 </body>
 </html>
