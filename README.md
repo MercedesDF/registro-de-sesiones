@@ -145,17 +145,10 @@ La URL exacta se mostrará en la sección "Pages" de la configuración de tu rep
 
 ## Enlaces del Proyecto y Contacto
 
-<<<<<<< HEAD
 *   **En acción**: [MercedesDF/egistro-de-sesiones](https://github.com/MercedesDF/egistro-de-sesiones)
 *   **LinkedIn (Principal)**: [mercedesdf](https://www.linkedin.com/in/mercedesdf)
 *   **LinkedIn (Ingeniería)**: [mercedesdf-ingenieria](https://www.linkedin.com/in/mercedesdf-ingenieria)
 *   **Contacto**: [mercedev@mercedev.es](mailto:mercedev@mercedev.es)
-=======
--   **En acción**: [MercedesDF/registro-de-sesiones](https://mercedesdf.github.io/registro-de-sesiones)
--   **LinkedIn (Principal)**: [mercedesdf](https://www.linkedin.com/in/mercedesdf)
--   **LinkedIn (Ingeniería)**: [mercedesdf-ingenieria](https://www.linkedin.com/in/mercedesdf-ingenieria)
--   **Contacto**: `mercedev@mercedev.es`
->>>>>>> 4d5869331bc64764c8a793a1f6119a704d005808
 
 ## Contribuciones
 
@@ -167,9 +160,4 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 
 ---
 
-<<<<<<< HEAD
-© 2025 mercedev
-```
-=======
-&copy; 2024-2025 mercedev
->>>>>>> 4d5869331bc64764c8a793a1f6119a704d005808
+&copy; 2025 mercedev
