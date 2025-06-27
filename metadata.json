@@ -1,0 +1,6 @@
+{
+  "name": "Registro de Sesiones v1.0.1 - FUNCIONANDO",
+  "description": "Una aplicación web para registrar manualmente las sesiones de trabajo y asignarlas a proyectos. Permite iniciar y detener temporizadores para llevar un control del tiempo invertido. Creada por mercedev.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
